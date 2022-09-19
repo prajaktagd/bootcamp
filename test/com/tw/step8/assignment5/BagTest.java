@@ -58,4 +58,20 @@ class BagTest {
 
     assertTrue(bag.add(new Ball(Color.YELLOW)));
   }
+
+  @Test
+  void shouldNotAddBlackBallIfBlueBallIsPresent() throws NegativeCapacityException {
+    Bag bag = Bag.createBag(4, 1);
+    bag.add(new Ball(Color.BLUE));
+
+    assertFalse(bag.add(new Ball(Color.BLACK)));
+  }
+
+  @Test
+  void shouldNotAddBlueBallIfBlackBallIsPresent() throws NegativeCapacityException {
+    Bag bag = Bag.createBag(4, 1);
+    bag.add(new Ball(Color.BLACK));
+
+    assertFalse(bag.add(new Ball(Color.BLUE)));
+  }
 }

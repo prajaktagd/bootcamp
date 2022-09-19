@@ -1,7 +1,7 @@
 package com.tw.step8.assignment5.exceptions;
 
 public class NegativeCapacityException extends Throwable {
-  private int capacity;
+  private final int capacity;
 
   public NegativeCapacityException(int capacity) {
     super();
